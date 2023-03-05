@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 设置对象属性的方式
+        var o = new Object()
+        o.name = 'zs'
+        o['age'] = 12
+        
+
+        // 变量对象
+        var o2 = {
+            name: '哈哈啊',
+            age: 12,
+            say:function(){
+                console.log('说话');
+            }
+        }
+
+        // for in 循环只会遍历对象上自定义的属性,一般我们使用for in来遍历对象,获取对象上的每一个key(原型上的信息无法获取)
+        for (var key in o2) {
+         console.log(o2[key]);
+        }
+
+        // 获取对象属性的方法
+        console.log(Object.getOwnPropertyNames(o2));
+    </script>
+</body>
+</html>
