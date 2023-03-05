@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 预解析：
+        // 1.用var声明的变量会自动提升到当前作用域的最前面，只会提升变量的声明，不会提升变量的赋值
+        // 2.函数的声明也会提升到当前作用域的最前面
+        // 3.函数的提升在变量提升之前
+
+
+        var test1 = 'aaa'
+
+        // js在执行代码之前会有一个预解析的过程，该预解析过程会把我们写的js代码进行处理之后再执行
+        function test1(){
+            console.log(num);// undefined 
+            var num = 10
+        }
+         console.log(test1);
+    </script>
+</body>
+</html>
