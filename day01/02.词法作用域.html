@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var value = 1
+        function foo() {
+            console.log(value);// 1
+        }
+        function bar() {
+            var value = 2
+            foo()
+        }
+        bar()
+
+        // 词法作用域和动态作用域的问题:
+        // JS采用的是词法作用域:函数内部可以访问函数外部的信息(函数内部有就用自己的,函数内部没有就用外部的)
+
+
+        // 作用域链：0代    1代     2代....
+        // 函数内部在使用变量的时候，会首先看当前函数有没有声明该变量，如果有声明，就优先使用自己声明的变量； 如果没有声明，就会沿着作用域链向上去查找，直到找到为止
+        var num = 1
+        function f1() {
+            var num = 2
+            function f2() {
+                var num = 3
+                console.log(num); // 3
+            }
+            f2()
+        }
+        f1()
+
+        // 变量声明了没有赋值，默认值就是undefined
+        // 变量没有声明直接使用， 打印结果是 xx is not defined
+        var kk;
+        console.log(kk);
+    </script>
+</body>
+
+</html>
