@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 在ES6之前,JS作用域可以分为两种
+        // 1.全局作用域                 一个变量拥有全局的作用范围
+        // 2.局部作用域(函数作用域)      一个变量只能在函数内部使用
+
+        // 全局变量
+        var a = 1
+
+        function test() {
+            // 局部变量
+            var b = 123
+
+            // 隐式全局变量
+            c = 234
+
+            // d:局部变量 e:隐式全局变量
+            var d = e = 888
+        }
+        test()
+        console.log(d);
+    </script>
+</body>
+
+</html>
