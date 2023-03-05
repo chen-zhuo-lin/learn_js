@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 对象怎么创建? 凡是通过new出来的都是对象
+        // Object是啥? Object是所有面向对象编程的最顶层
+
+        // 字面量创建
+        var o = {
+            name: '小明',
+            age: 18,
+            say(){
+                console.log(this.name,'在说话');
+            }
+        }
+
+        // new Object创建
+        var o2 = new Object()
+        o2.name = '小曾'
+        o2.age = 29
+        console.log(o2);
+
+        // instanceof判断一个对象是否是指定类型的对象
+        console.log(o2 instanceof Object);
+
+        // 构造函数创建
+        // 构造函数和普通函数的区别:构造函数是用来创建对象的,首字母大写(在js中构造函数充当了其他面向对象编程中类的概念)
+        function Person(name,age){
+            // this指向当前对象本身
+            this.name = name
+            this.age = age
+        }
+        var p1 = new Person('刘德华', 18)
+    </script>
+</body>
+
+</html>
