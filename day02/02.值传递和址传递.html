@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var num1 = 100
+        var num2 = 200
+        function changeA(a, b){
+            var tmp = a
+            a = b
+            b = tmp
+            console.log(a, b); // 200 100
+        }
+        changeA(num1, num2) // 执行完,栈中销毁
+
+        console.log(num1, num2);  // 100 200
+    </script>
+
+    <script>
+        // 址传递
+        function changeB(arr){
+            var tmp = arr[0]
+            arr[0] = arr[1]
+            arr[1] = tmp
+        }
+        var arr = [100, 200]
+        changeB(arr)
+        console.log(arr); // 200 100
+    </script>
+</body>
+
+</html>
