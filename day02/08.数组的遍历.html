@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // for循环  
+        // for in   遍历对象的自定义属性(一般只遍历对象)
+        // for of   遍历数组(迭代器的遍历)
+        var arr = [1, 2, 3]
+        for (var o of arr) {
+            // console.log(o);
+        }
+
+        // 常见的遍历数组的方法：forEach  map  filter every  some
+        // foreach只是用来遍历数组，不会给我们返回新的数组
+        arr.forEach(function (item, idex) {
+            // console.log(item, idex);
+        })
+
+
+        // map方法会返回一个新的数组（不会修改原数组）,在map方法所入参的函数中我们需要手动return元素给新数组
+        var newArr = arr.map(function (item, idx) {
+            item = item * 2
+            return item
+        })
+        // console.log(newArr);
+
+
+        // filter方法会给我们返回一个新的数组（不会修改原数组），我们可以使用该方法来过滤数组
+        var newArr = arr.filter(function (item) {
+            if (item > 1) {
+                return true
+            }
+        })
+        // console.log(newArr);
+
+
+        // every方法返回值是 true/false，用途是来判断数组中的每一个元素是否满足要求
+        var flag = arr.every(function (item) {
+            if (item > 2) {
+                return true
+            }
+        })
+
+
+        // some方法返回值是true和false，用途是用来判断数组中的任何一个元素是否满足要求
+        var flag = arr.some(function (item, idx) {
+            return item > 2
+        })
+
+
+        // reduce方法可以用来累计计算
+        var sum = arr.reduce(function (item1, item2) {
+            return item1 + item2
+        })
+    </script>
+</body>
+
+</html>
