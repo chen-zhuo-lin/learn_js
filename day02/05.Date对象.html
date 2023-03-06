@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var date = new Date()
+        var d1 = new Date("2000-9-29")
+        // 获取时间戳, 1970年1月1日开始到现在的毫秒数
+        console.log(date.valueOf());
+        console.log(date.getTime());
+    </script>
+
+    <script>
+        // 时间格式化
+        // new Date() ----> yyyy-MM-DD HH:mm:ss
+        function formatDate(date) {
+            if (!date instanceof Date) {
+                return
+            }
+            var year = date.getFullYear()
+            var month = date.getMonth() + 1 + ' '
+            var d = date.getDate() + ''
+            var hour = date.getHours() + ''
+            var m = date.getMinutes() + ''
+            var s = date.getSeconds() + ''
+
+            // month.padStart(2,0), 字符串不满足两位，前面用0来填充
+            month = month.padStart(2, 0)
+            d = d.padStart(2, 0)
+            hour = hour.padStart(2, 0)
+            m = m.padStart(2, 0)
+            s = s.padStart(2, 0)
+
+            return `${year}-${month}-${d} ${hour}:${m}:${s}`
+        }
+        console.log(formatDate(date));
+    </script>
+</body>
+
+</html>
