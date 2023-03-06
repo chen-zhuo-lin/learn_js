@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Math 提供了数学相关内置函数
+        // Math.PI、Math.random()、Math.floor()/Math.ceil()、Math.round()、Math.abs()、Math.max()/Math.min()
+
+        // 随机颜色
+        function randomColor() {
+            var r = parseInt(Math.random() * 256)
+            var g = parseInt(Math.random() * 256)
+            var b = parseInt(Math.random() * 256)
+
+            return `rgb(${r},${g},${b})`
+        }
+
+        console.log(randomColor());
+    </script>
+
+</body>
+
+</html>
