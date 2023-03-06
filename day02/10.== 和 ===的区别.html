@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 获取字符串长度
+        var str = 'abc'
+        console.log(str.length);
+
+        // 字符串== 和 ===
+        // ==  对于基本数据而言，==判断两个数据的值是否相等，对于引用类型而言，判断的是两个数据的内存地址是否相等
+        // === 判断的是两个数据的值和类型是否相等
+        var s1 = '11'
+        var s2 = '11'
+        var s3 = new String("11")
+        var s4 = new String("11")
+        console.log(s1 == s2); // true
+        console.log(s2 == s3); // true，当基本类型和引用类型使用==比较的时候，会把引用类型拆箱后再对比
+        console.log(s2 === s3); // false
+        console.log(s3 === s4); // false
+    </script>
+</body>
+</html>
