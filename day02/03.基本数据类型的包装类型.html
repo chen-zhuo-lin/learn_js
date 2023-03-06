@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 在计算机编程中,万物皆对象,为了符合万物皆对象的思想,所以几乎所有的编程语言都会给基本数据类型提供一个包装类型
+        // 基本数据类型的包装类型: Number Boolean String
+
+        // 对象有属性和方法,而基本数据类型没有属性和方法
+        // 基本数据类型和引用类型之间会存在装箱和拆箱的过程。
+        // 装箱：自动将基本数据类型转换成包装类型
+        // 拆箱：自动将包装类型转换为基本数据类型
+
+        var str = "abc132" // 相当于 var str = new String("abc123")
+        // 这边会存在自动装箱的过程
+        console.log(str.substr(0, 3));
+    </script>
+
+    <script>
+        var num = 18 // 基本数据类型
+        var num = Number("18") // 强制类型转换，将字符串18转换为数值类型
+        var num = new Number(18) // 基本包装类型，对象
+    </script>
+</body>
+
+</html>
