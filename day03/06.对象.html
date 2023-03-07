@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 练习: 有一个黄色的小狗,进行描述
+        function Dog(color, name, age, weight) {
+            this.color = color
+            this.name = name
+            this.age = age
+            this.weight = weight
+            this.walk = function () {
+                console.log(this.name + "走路很慢");
+            }
+        }
+
+        var keji = new Dog("red", "小白", 18, 1)
+        keji.walk()
+    </script>
+</body>
+
+</html>
