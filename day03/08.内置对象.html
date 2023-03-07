@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // JS内置对象:Math Date Array String
+        var date = new Date()
+        // 获取时间戳
+        console.log(Date.now());
+
+        // Array
+        var arr = [1, 2, 3, 4]
+        // includes:判断数组中是否包含指定元素,返回true/false
+        console.log(arr.includes(3));
+
+        // find:用来查找数组中的指定元素,如果找到了就return true
+        console.log(arr.find(function (item) {
+            if (item === 3) return true
+        }));
+
+        // find:用来查找数组中符合条件的元素下标
+        console.log(arr.findIndex(function (item) {
+            if (item === 3) return true
+        }));
+
+    </script>
+</body>
+
+</html>
