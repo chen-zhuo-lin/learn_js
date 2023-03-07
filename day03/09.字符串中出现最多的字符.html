@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = "sagdhsajkcvshzcbnmcsdvcbhjsdnzxjsvhcbjsakhvcgjdqwkhdy2r6657861278q462"
+        // 找出字符串中出现次数最多的字符和出现的次数
+        var obj = {}
+        for (var i = 0; i < str.length; i++) {
+            // console.log(str[i]);            
+            if (obj[str[i]]) {
+                obj[str[i]] += 1
+            } else {
+                obj[str[i]] = 1
+            }
+        }
+
+        // 获取对象的第一个key
+        var kk = Object.getOwnPropertyNames(obj)[0]
+        for(var key in obj){
+            if (obj[kk] < obj[key]) {
+                kk = key
+            }
+        }
+        console.log(`出现最多的字符${kk},出现的次数是${obj[kk]}`);
+</script>
+</body>
+
+</html>
