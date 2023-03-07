@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //一个人守着一棵树，各种动物会来撞树，其中80%的概率出现的是兔子，20%的概率出现的是老虎。
+        //兔子撞树后，60%的概率兔子撞晕了，人直接捡到兔子，40%的概率兔子没撞晕，人有50%的概率抓到活兔子
+        //老虎撞树后，30%的概率老虎撞晕了，人直接捡到老虎。70%概率老虎没撞晕。对于没撞晕的老虎，人有30%的概率打死老虎，捡到老虎。40%的概率没打死老虎，老虎跑掉。还有30%的概率人被老虎咬死了，这时游戏结束。
+
+
+        /*
+        分析的对象:
+            人  doSomeThingWithAnimal   isDead  name
+            树
+            老虎
+            秃子
+        */
+
+        function Person(name) {
+            this.isDead = false
+            this.name = name
+            this.doSomeThingWithAnimal = function (animal) {
+                if (animal instanceof Rabbit) {
+                    if (animal.isYun) {
+                        console.log("兔子撞晕了" + this.name + "捡到兔子");
+                    } else {
+                        var random = parseInt(Math.random() * 100)
+                        if (random < 50) {
+                            console.log("兔子没撞晕" + this.name + "抓到活兔子");
+                        } else {
+                            console.log('兔子跑掉了');
+                        }
+                    }
+                } else {
+                    if (animal.isYun) {
+                        console.log("老虎撞晕了" + this.name + "捡到老虎");
+                    } else {
+                        var random = parseInt(Math.random() * 100)
+                        if (random < 30) {
+                            console.log("老虎没撞晕" + this.name + "打死老虎,捡到老虎");
+                        } else if (random < 70) {
+                            console.log("老虎跑掉了");
+                        } else {
+                            this.isDead = true
+                            console.log("人被老虎咬死了");
+                        }
+                    }
+                }
+            }
+        }
+
+        function Rabbit() {
+            this.name = "兔子"
+            this.isYun = false
+            this.hitTree = function () {
+                // 60% 的概率兔子撞晕了
+                var random = parseInt(Math.random() * 100)
+                if (random < 60) {
+                    this.isYun = true
+                }
+            }
+        }
+
+        function Tiger() {
+            this.name = "老虎"
+            this.isYun = false
+            this.hitTree = function () {
+                // 30%的概率老虎撞晕了
+                var random = parseInt(Math.random() * 100)
+                if (random < 30) {
+                    this.isYun = true
+                }
+            }
+        }
+
+        var wusong = new Person("武松")
+        for (var i = 0; i < 100; i++) {
+            var random = parseInt(Math.random() * 100)
+            // 80%的概率出现的是兔子 
+            if (random < 80) {
+                var rabbit = new Rabbit()
+                rabbit.hitTree()
+                wusong.doSomeThingWithAnimal(rabbit)
+            } else {
+                // 20%概率出现的老虎
+                var tiger = new Tiger()
+                tiger.hitTree()
+                wusong.doSomeThingWithAnimal(tiger)
+
+                if (wusong.isDead) {
+                    console.log("游戏结束");
+                    break
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
