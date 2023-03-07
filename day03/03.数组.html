@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 数组:就是将多个元素(可以是不同类型的数据) 按一定顺序列放到一个集合中
+        var arr = [1.2, 3, 4, 5]
+    </script>
+    <script>
+        // 排序算法:时间复杂度  空间复杂度
+        // 时间复杂度:就是排序算法需要执行的运行次数(时间)
+        // 空间复杂度:就是排序算法在执行过程中占用的计算机内存
+        var scores = [83, 33, 21, 76, 64, 86, 65, 87]
+        for (var i = 0; i < scores.length - 1; i++) {
+            for (var j = 0; j < scores.length - i - 1; j++) {
+                if (scores[j] > scores[j + 1]) {
+                    var tmp = scores[j + 1]
+                    scores[j] = scores[j + 1]
+                    scores[j + 1] = tmp
+                }
+            }
+        }
+        console.log(scores);
+
+    </script>
+
+    <script>
+        // 二维数组
+        var arr2 = [[1,2,3],[4,5,6]]
+    </script>
+</body>
+
+</html>
