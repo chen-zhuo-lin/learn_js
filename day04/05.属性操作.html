@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://www.baidu.com:8080/abc/123" title="baidu" id="link">点我</a>
+    <div class="dv">div</div>
+
+    <script>
+        // 浏览器在显示页面的时候,会将页面上的每一个元素都转换为dom对象
+        // 我们通过dom操作获取到的元素都是dom对象
+        // 浏览器在帮我们把页面元素转换为dom对象的时候,会给dom对象绑定很多属性(hostname path)
+        var a = document.getElementById("link")
+        console.dir(a)
+        console.log(a.baseURI);
+
+        // 关于innerText/textContent/innerHTML/value
+        // innerText 设定或者获取标签的文本内容
+        // textContent 设定或者获取标签的文本内容(兼容性)
+        // innerHTML 设定或者获取标签的网页内容
+        // value 设置获取获取input元素的值
+
+    </script>
+</body>
+</html>
