@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div onclick="alert(1)">点我alert1</div>
+    <div onclick="showMe()">点我alert2</div>
+    <div id="dv">点我alert3</div>
+
+    <!-- 对于script标签 放到body标签闭合之前 -->
+    <script>
+        function showMe(){
+            alert(2)
+        }
+
+        // 通过dom事件分配的方式给元素绑定事件
+        document.getElementById("dv").onclick = function(){
+            alert(3)
+        }
+    </script>
+</body>
+</html>
