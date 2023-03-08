@@ -15,6 +15,13 @@ function setInnerText(obj, text) {
     }
 }
 
+function getInnerText(obj) {
+    if (obj.textContent != undefined) {
+        return obj.textContent
+    }
+    return obj.innerText
+}
+
 function getStyle(obj, attr) {
     if (obj.currentStyle) {
         return obj.currentStyle[attr]
@@ -32,13 +39,6 @@ function css(obj, attr, value) {
     else if (arguments.length === 3) {
         obj.style[attr] = value;
     }
-}
-
-function getInnerText(obj) {
-    if (obj.textContent != undefined) {
-        return obj.textContent
-    }
-    return obj.innerText
 }
 
 
