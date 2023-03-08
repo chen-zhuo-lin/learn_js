@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="dv">div1</div>
+    <div class="dv">div2</div>
+    <p>p标签</p>
+    <input type="text" name="name">
+
+    <div class="box">
+        <div class="inner">
+            <p>元素1</p>
+            <p>元素2</p>
+        </div>
+    </div>
+
+    <script>
+        // 1.根据id来获取页面元素
+        var dv = document.getElementById("dv")
+        // 2.根据class来获取页面元素
+        var dv2 = document.getElementsByClassName("dv")
+        // 3.根据标签来获取页面元素
+        var ps = document.getElementsByTagName("p")[0]
+        // 4.根据input标签的name属性来获取
+        var input = document.getElementsByName("name")[0]
+        console.log(input);
+
+
+        // 5.querySelector 允许我们入参一个选择器,追返回符合条件的第一个元素
+        var inner = document.querySelector(".box>.inner>p")
+        // 6.querySelectorAll 允许我们入参一个选择器,会返回所有符合条件的元素
+        var innerPS = document.querySelectorAll(".box>.inner>p")
+        console.log(innerPS);
+    </script>
+</body>
+
+</html>
